@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles/NavBar.css';
 
 function NavBar() {
+
+  const [showModal, setShowModal] = useState(false);
 
   var navLinksData = [
       { "url": "https://google.com", "label": "Google" },
@@ -16,18 +18,77 @@ function NavBar() {
               {link.label}
           </a>
       </li>
-  ))
+  ));
+
+  function openModal() {
+    setShowModal(true);
+  }
+
+  function closeModal() {
+    setShowModal(false);
+  }
 
   return (
     <div className="navbar">
-      <header className="homeLogo">
-          When's It Go <u>Bad</u>?
-      </header>
+      <div className="homeLogo">
+        <div className="appIcon">
+          <img src="https://safoodexpapp.blob.core.windows.net/images/WIGBAD_Logo.png" />
+        </div>
+        <div className="homeTitle">
+          <div className="homeName">
+            When's It Go <u>Bad</u>?
+          </div>
+          <div className="homeBlurb">
+            a database of food expiration times
+          </div>
+        </div>
+      </div>
       <ul className="navLinks">          
           {navLinks}
+          <li onClick={openModal}>
+            <a>
+              Coming Features
+            </a>
+          </li>
       </ul>
+      <Modal show={showModal} handleClose={closeModal}>
+        <h1>List of Upcoming Features</h1>
+        <ul style={{}}>
+          {listOfComingFeatures.map(feature => (
+            <li>{feature}</li>
+          ))}
+        </ul>
+      </Modal>
     </div>
   );
 }
+
+const listOfComingFeatures = [
+  "Delete Button on Food Cards",
+  "Connection with Fake API",
+  "Search Bar, with auto-fill and suggestions [fuzzysort]",
+  "Some mad styling. Maybe styled components, maybe scss.",
+  "Animations out the wa-zoo",
+  "Icons for each food item",
+  "Actual data"
+]
+
+const Modal = (
+  { 
+    handleClose, 
+    show, 
+    children 
+  }) => {
+    const showHideClassName = show ? "modal display-block" : "modal display-none";
+
+    return (
+      <div className={showHideClassName}>
+        <section className="modal-main">
+          {children}
+          <button onClick={handleClose}>Close</button>
+        </section>
+      </div>
+    );
+  };
 
 export default NavBar;

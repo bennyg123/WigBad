@@ -10,28 +10,36 @@ function App() {
 
   const initialFoodItems = [
     { 
-      id: 1,
+      id: 2,
       item: 'Jelly Beans' 
     },
     { 
-      id: 2,
+      id: 1,
       item: 'Potato Chip' 
     },
     { 
-      id: 3,
+      id: 0,
       item: 'Used Napkin' 
     }
   ]
 
-  const [searchedTerms, addSearchTerm] = useState(initialFoodItems);
+  const [searchedTerms, modifySearchTerms] = useState(initialFoodItems);
 
   const [searchInput, setSearchInputTo] = useState('');
 
   const [foodItemIdCounter, incrementFoodItemId] = useState(searchedTerms.length);
 
+  function getNextFoodId() {
+    incrementFoodItemId(foodItemIdCounter + 1);
+    return foodItemIdCounter;
+  }
+
   function handleAddSearchTerm() {
-    addSearchTerm([
-      { item: searchInput },
+    modifySearchTerms([
+      { 
+        id: getNextFoodId(),
+        item: searchInput 
+      },
       ...searchedTerms
     ]);
 

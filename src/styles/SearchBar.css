@@ -12,6 +12,13 @@
     font-family: 'Comic Neue';
     background-color: navy;
     color: white;
+    border-radius: 10px;
+}
+
+.search-bar-container button {
+    background-color: grey;
+    border-radius: 5px;
+    margin-left: 15px;
 }
 
 .search-bar-container input::placeholder {

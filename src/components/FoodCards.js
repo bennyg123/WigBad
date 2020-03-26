@@ -34,15 +34,15 @@ const FoodCard = ({
       </div>
       <div className="counter-life-box">
         <div>Counter Life:</div>
-        <div>2-4 hours</div>
+        <div>2 - 4 hours</div>
       </div>
       <div className="fridge-life-box">
         <div>Fridge Life:</div>
-        <div>2-4 hours</div>
+        <div>5 - 7 days</div>
       </div>
       <div className="freezer-life-box">
         <div>Freezer Life:</div>
-        <div>2-4 hours</div>
+        <div>6 months</div>
       </div>
     </div>
   )

@@ -1,16 +1,21 @@
 .homeLogo {
-    text-transform: uppercase;
-    font-size: 40px;
+    display: flex;
+    justify-content: space-evenly;
     width: 40%;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 20px;
-    font-family: 'Impact';
-    letter-spacing: 2px;
 }
 
-.homeLogo:hover {
-    font-size: 42px;
+.appIcon img {
+    height: 75px;
+}
+
+.homeName {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: 'Impact';
+    letter-spacing: 2px;
 }
 
 .navbar {
@@ -36,8 +41,60 @@
     padding: 10px;
     color: white;
     display: block;
+    text-decoration: none;
 }
 
 .navLinks li:hover {
     opacity: 0.50;
 }
+
+/* --------------- BEGIN | Styling for Modal --------------- */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-main {
+    position:fixed;
+    background: black;
+    width: 60%;
+    height: auto;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-main > ul {
+      align-self: flex-start;
+  }
+
+  .modal-main > ul > li {
+    padding-top: 2px;
+}
+
+  .modal-main button {
+      width: 15%;
+      color: white;
+      background-color: darkslategrey;
+      padding-top: 5px;
+      padding-bottom: 5px;
+  }
+  
+  .display-block {
+    display: block;
+  }
+  
+  .display-none {
+    display: none;
+  }
+
+  /* --------------- END | Styling for Modal --------------- */
