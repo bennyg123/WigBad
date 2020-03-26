@@ -9,19 +9,30 @@ import FoodCardListContainer from './FoodCards';
 function App() {
 
   const initialFoodItems = [
-    { item: 'Jelly Beans' },
-    { item: 'Potato Chip' },
-    { item: 'Used Napkin' }
+    { 
+      id: 1,
+      item: 'Jelly Beans' 
+    },
+    { 
+      id: 2,
+      item: 'Potato Chip' 
+    },
+    { 
+      id: 3,
+      item: 'Used Napkin' 
+    }
   ]
 
   const [searchedTerms, addSearchTerm] = useState(initialFoodItems);
 
   const [searchInput, setSearchInputTo] = useState('');
 
+  const [foodItemIdCounter, incrementFoodItemId] = useState(searchedTerms.length);
+
   function handleAddSearchTerm() {
     addSearchTerm([
-      ...searchedTerms,
-      { item: searchInput }
+      { item: searchInput },
+      ...searchedTerms
     ]);
 
     setSearchInputTo('');
@@ -35,15 +46,11 @@ function App() {
           p_setSearchInputTo={setSearchInputTo}
           p_handleAddSearchTerm={handleAddSearchTerm}
           />
-      <FoodCardListContainer />
-      
-      <div style={{marginTop: "50px", padding: "15px"}}>
-        Searched Terms:
-        <div style={{border: "1px solid black", borderRadius: "8px", padding: "10px", margin: "10px"}}>
-          {searchedTerms.map(term => <li>{term.item}</li>)}
-        </div>
-      </div>
-
+      <FoodCardListContainer 
+          p_searchedTerms={searchedTerms}/>
+      <footer>
+        <i><small>&copy; Copyright 2020 | Property of <b>Let's Hire Paul Dang LLC</b> - All Rights Reserved </small></i>
+      </footer>
     </div>
   );
 }
