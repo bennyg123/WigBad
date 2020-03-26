@@ -79,7 +79,8 @@
 
   .modal-main > ul > li {
     padding-top: 2px;
-}
+    list-style-type: square;
+  }
 
   .modal-main button {
       width: 15%;

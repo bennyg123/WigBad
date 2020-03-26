@@ -64,13 +64,22 @@ function NavBar() {
 }
 
 const listOfComingFeatures = [
-  "Delete Button on Food Cards",
-  "Connection with Fake API",
-  "Search Bar, with auto-fill and suggestions [fuzzysort]",
-  "Some mad styling. Maybe styled components, maybe scss.",
-  "Animations out the wa-zoo",
-  "Icons for each food item",
-  "Actual data"
+  "[LOGIC] Delete & Collapse Buttons on Food Cards",
+  "[LOGIC] Search Bar, with auto-fill and suggestions [fuzzysort]",
+  "[LOGIC] Redux & TypeScript",
+  " == ",
+  "[BACK END] Connection with Fake API Server",
+  "[BACK END] Actual data",
+  " == ",
+  "[UI] Icons for each food item",
+  "[UI] Some mad styling. Maybe styled components, maybe scss.",
+  "[UI] Animations out the wa-zoo. Lots of fade-ins and pan-ins",
+  "[UI] Responsive Styling (Desktop and Mobile)",
+  " == ",
+  "[MISC] Add custom domain to pauldang.dev",
+  "[MISC] Modify app / tab logo and text",
+  "[MISC] Implement unit testing with Jest / Enzyme"
+  
 ]
 
 const Modal = (
@@ -82,7 +91,7 @@ const Modal = (
     const showHideClassName = show ? "modal display-block" : "modal display-none";
 
     return (
-      <div className={showHideClassName}>
+      <div className={showHideClassName} onClick={handleClose}>
         <section className="modal-main">
           {children}
           <button onClick={handleClose}>Close</button>
