@@ -26,6 +26,13 @@ const FoodCard = ({
 
   const imgUrl = `https://picsum.photos/50?random=${p_length - p_index}`;
 
+  const counterLowerRange = Math.floor(Math.random() * 5);
+  const counterUpperRange = Math.floor(Math.random() * 4) + 5;
+
+  const FridgeRange = Math.floor(Math.random() * 11);
+
+  const FreezerRange = Math.floor(Math.random() * 9) + 3;
+
   return (
     <div className="food-card">
       <div className="name-box">
@@ -34,15 +41,15 @@ const FoodCard = ({
       </div>
       <div className="counter-life-box">
         <div>Counter Life:</div>
-        <div>2 - 4 hours</div>
+        <div>{counterLowerRange} - {counterUpperRange} hours</div>
       </div>
       <div className="fridge-life-box">
         <div>Fridge Life:</div>
-        <div>5 - 7 days</div>
+        <div>{FridgeRange} days</div>
       </div>
       <div className="freezer-life-box">
         <div>Freezer Life:</div>
-        <div>6 months</div>
+        <div>{FreezerRange} months</div>
       </div>
     </div>
   )
