@@ -1,0 +1,43 @@
+.homeLogo {
+    text-transform: uppercase;
+    font-size: 40px;
+    width: 40%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    font-family: 'Impact';
+    letter-spacing: 2px;
+}
+
+.homeLogo:hover {
+    font-size: 42px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(0, 102, 204);
+    color: white;
+}
+
+.navLinks {
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navLinks li {
+    background-color: rgb(0, 72, 144);;
+    list-style-type: none;
+}
+
+.navLinks li a {
+    padding: 10px;
+    color: white;
+    display: block;
+}
+
+.navLinks li:hover {
+    opacity: 0.50;
+}
